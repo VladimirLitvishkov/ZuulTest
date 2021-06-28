@@ -25,10 +25,10 @@ public class CustomAuthFilter implements Filter{
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) resp;
 //		System.out.println(request.getHeader("Authorization"));
-		request.login("admin", "123");
+//		request.login("admin", "123");
 //		System.out.println(request.getHeader("Authorization"));
 		chain.doFilter(request, response);
-		System.out.println("=========================================");
+//		System.out.println("=========================================");
 		
 	}
 

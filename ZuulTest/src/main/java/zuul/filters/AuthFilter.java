@@ -21,16 +21,16 @@ public class AuthFilter extends ZuulFilter {
 
 	@Override
 	public Object run() throws ZuulException {
-		System.out.println("+++++++++++++++++++++++++++++");
-		System.out.println(RequestContext.getCurrentContext().getZuulRequestHeaders().get("Authorization"));
-		RequestContext.getCurrentContext().addZuulResponseHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:123".getBytes()));
-		RequestContext.getCurrentContext().addZuulRequestHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:123".getBytes()));
+//		System.out.println("+++++++++++++++++++++++++++++");
+//		System.out.println(RequestContext.getCurrentContext().getZuulRequestHeaders().get("Authorization"));
+//		RequestContext.getCurrentContext().addZuulResponseHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:123".getBytes()));
+//		RequestContext.getCurrentContext().addZuulRequestHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:123".getBytes()));
 //		try {
 //			RequestContext.getCurrentContext().getRequest().login("admin", "123");
 //		} catch (ServletException e) {
 //			e.printStackTrace();
 //		}
-		System.out.println(RequestContext.getCurrentContext().getZuulRequestHeaders().get("Authorization"));
+//		System.out.println(RequestContext.getCurrentContext().getZuulRequestHeaders().get("Authorization"));
 		return null;
 	}
 
