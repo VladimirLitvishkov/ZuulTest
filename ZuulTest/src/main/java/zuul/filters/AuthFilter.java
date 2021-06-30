@@ -4,6 +4,7 @@ import static org.springframework.cloud.netflix.zuul.filters.support.FilterConst
 import java.util.Base64;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Component;
 
@@ -21,16 +22,11 @@ public class AuthFilter extends ZuulFilter {
 
 	@Override
 	public Object run() throws ZuulException {
-//		System.out.println("+++++++++++++++++++++++++++++");
-//		System.out.println(RequestContext.getCurrentContext().getZuulRequestHeaders().get("Authorization"));
-//		RequestContext.getCurrentContext().addZuulResponseHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:123".getBytes()));
-//		RequestContext.getCurrentContext().addZuulRequestHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:123".getBytes()));
-//		try {
-//			RequestContext.getCurrentContext().getRequest().login("admin", "123");
-//		} catch (ServletException e) {
-//			e.printStackTrace();
-//		}
-//		System.out.println(RequestContext.getCurrentContext().getZuulRequestHeaders().get("Authorization"));
+		System.out.println("+++++++++++++++++++++++++++++");
+		RequestContext ctx = RequestContext.getCurrentContext();
+        HttpServletRequest request = ctx.getRequest();
+//        ctx.addZuulRequestHeader("Authorization", request.getHeader("Authorization"));
+        ctx.addZuulRequestHeader("Authorization", "Basic " + Base64.getEncoder().encodeToString("admin:123".getBytes()));
 		return null;
 	}
 

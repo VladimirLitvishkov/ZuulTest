@@ -16,7 +16,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Service;
 
 @Service
-@Order(1)
+@Order(33)
 public class CustomAuthFilter implements Filter{
 
 	@Override
